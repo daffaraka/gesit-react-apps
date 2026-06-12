@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+html, body {
+  background-color: #f8fafc; /* bg-slate-50 */
+  color: #1e293b; /* text-slate-800 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.auth-bg {
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+}
+
+/* -------------------------------------
+   PDF STYLES (Identical to Vanilla JS)
+------------------------------------- */
+.pdf-page {
+  font-family: 'Arial', sans-serif;
+  color: black;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.pdf-text-center { text-align: center; }
+
+.judul-surat {
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.bordered-table, .bordered-table th, .bordered-table td {
+  border: 1px solid black;
+}
+
+.bordered-table td {
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+.layout-table {
+  width: 100%;
+}
+
+.layout-table td {
+  padding: 2px 4px;
+  vertical-align: top;
+}
