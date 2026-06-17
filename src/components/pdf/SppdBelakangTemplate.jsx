@@ -36,7 +36,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
             { num: 'V.' }
           ].map((row, idx) => (
             <tr key={idx}>
-              <td style={{ padding: '4px 6px', verticalAlign: 'top' }}>
+              <td style={{ padding: '10px 10px', verticalAlign: 'top' }}>
                 <table style={{ width: '100%' }}>
                   <tbody>
                     <tr><td style={{ width: '30px' }}>{row.num}</td><td style={{ width: '80px' }}>Tiba di</td><td>:</td></tr>
@@ -46,7 +46,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
                   </tbody>
                 </table>
               </td>
-              <td style={{ padding: '4px 6px', verticalAlign: 'top' }}>
+              <td style={{ padding: '10px 10px', verticalAlign: 'top' }}>
                 <table style={{ width: '100%' }}>
                   <tbody>
                     <tr><td style={{ width: '100px' }}>Berangkat</td><td>:</td></tr>
@@ -62,7 +62,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
 
           {/* Row VI */}
           <tr>
-            <td style={{ padding: '4px 6px', verticalAlign: 'top' }}>
+            <td style={{ padding: '10px 10px', verticalAlign: 'top' }}>
               <table style={{ width: '100%' }}>
                 <tbody>
                   <tr><td style={{ width: '30px' }}>VI.</td><td style={{ width: '120px' }}>Tiba di</td><td>:</td></tr>
@@ -72,21 +72,21 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
                 </tbody>
               </table>
             </td>
-            <td style={{ padding: '4px 6px', verticalAlign: 'top', textAlign: 'justify' }}>
+            <td style={{ padding: '10px 10px', verticalAlign: 'top', textAlign: 'justify' }}>
               Telah diperiksa, dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya
             </td>
           </tr>
 
           {/* Row VII */}
           <tr>
-            <td colSpan="2" style={{ padding: '4px 6px', fontWeight: 'bold' }}>
+            <td colSpan="2" style={{ padding: '10px 10px', fontWeight: 'bold' }}>
               VII. CATATAN LAIN-LAIN
             </td>
           </tr>
 
           {/* Row VIII */}
           <tr>
-            <td colSpan="2" style={{ padding: '4px 6px' }}>
+            <td colSpan="2" style={{ padding: '10px 10px' }}>
               <span style={{ fontWeight: 'bold' }}>VIII. PERHATIAN</span><br />
               <div style={{ textAlign: 'justify', marginTop: '4px' }}>
                 Pejabat yang berwenang menerbitkan SPD, pegawai yang melakukan perjalanan dinas, para pejabat yang mengesahkan tanggal berangkat / tiba serta bendaharawan bertanggung jawab berdasarkan peraturan-peraturan Keuangan Negara, apabila Negara mendapat rugi akibat kesalahan, kealpaannya.
