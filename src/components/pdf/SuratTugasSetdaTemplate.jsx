@@ -11,13 +11,13 @@ const SuratTugasSetdaTemplate = forwardRef(function SuratTugasSetdaTemplate({ fo
         <tbody>
           <tr>
             <td style={{ width: '15%', textAlign: 'center', verticalAlign: 'middle', paddingBottom: '10px' }}>
-              <img src="/logo-bener-meriah.jpg" alt="Logo" style={{ width: '75px', height: 'auto' }} />
+              <img src="/logo-bener-meriah.jpg" alt="Logo" style={{ width: '120px', maxWidth: 'none', height: 'auto', display: 'inline-block' }} />
             </td>
             <td style={{ width: '85%', textAlign: 'center', lineHeight: '1.1', paddingBottom: '10px' }}>
               <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
               <span style={{ fontSize: '15pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
-              <img src="/huruf-arab.jpeg" alt="Huruf Arab"
-                style={{ width: '420px', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+              <img src="/arab.jpg" alt="Huruf Arab"
+                style={{ width: '210px', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
               <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
               <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
             </td>
@@ -119,7 +119,7 @@ const SuratTugasSetdaTemplate = forwardRef(function SuratTugasSetdaTemplate({ fo
           )}
 
           <tr><td colSpan="6" style={{ height: '10px' }}></td></tr>
-          
+
           <tr>
             <td style={{ verticalAlign: 'top' }}>Untuk</td>
             <td style={{ verticalAlign: 'top' }}>:</td>
@@ -146,7 +146,7 @@ const SuratTugasSetdaTemplate = forwardRef(function SuratTugasSetdaTemplate({ fo
           </tr>
         </tbody>
       </table>
-      
+
       <br />
       <p>Demikianlah untuk dilaksanakan sebagaimana mestinya</p>
 

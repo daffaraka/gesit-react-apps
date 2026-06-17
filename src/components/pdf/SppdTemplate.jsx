@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, lama, tglBerangkatIndo, tglKembaliIndo, tglSuratIndo }, ref) {
   const utama = pegawaiList[0] || {};
   const pengikut = pegawaiList.slice(1);
+  const isBupati = formData.jenis_spt === 'BUPATI';
 
   return (
     <div ref={ref} className="pdf-page">
@@ -10,26 +11,26 @@ const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, l
         <tbody>
           <tr>
             <td style={{ width: '15%', textAlign: 'center', verticalAlign: 'middle', paddingBottom: '10px' }}>
-              <img src="/logo-bener-meriah.jpg" alt="Logo" style={{ width: '75px', height: 'auto' }} />
+              <img src="/logo-bener-meriah.jpg" alt="Logo" style={{ width: '120px', maxWidth: 'none', height: 'auto', display: 'inline-block' }} />
             </td>
             <td style={{ width: '85%', textAlign: 'center', lineHeight: '1.1', paddingBottom: '10px' }}>
-              <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
-              <span style={{ fontSize: '15pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
-              <img src="/huruf-arab.jpeg" alt="Huruf Arab"
-                style={{ width: '420px', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
-              <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
-              <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
+              <span style={{ fontSize: '11pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
+              <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
+              <img src="/arab.jpg" alt="Huruf Arab"
+                style={{ width: '210', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+              <span style={{ fontSize: '7pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
+              <span style={{ fontSize: '7pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
             </td>
           </tr>
         </tbody>
       </table>
-      
+
       <table className="layout-table" style={{ marginBottom: '15px' }}>
         <tbody>
           <tr>
             <td style={{ width: '50%' }}></td>
             <td style={{ width: '50%' }}>
-              <table className="layout-table" style={{ fontSize: '10pt' }}>
+              <table className="layout-table" style={{ fontSize: '8pt' }}>
                 <tbody>
                   <tr>
                     <td style={{ width: '20%' }}>Nomor</td>
@@ -62,7 +63,7 @@ const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, l
           <tr>
             <td className="pdf-text-center">1.</td>
             <td style={{ width: '46%' }}>Pejabat yang memberi perintah</td>
-            <td colSpan="2">Sekretaris Daerah Kabupaten Bener Meriah</td>
+            <td colSpan="2">{isBupati ? 'Bupati Bener Meriah' : 'Sekretaris Daerah Kabupaten Bener Meriah'}</td>
           </tr>
           <tr>
             <td className="pdf-text-center">2.</td>
@@ -132,17 +133,26 @@ const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, l
         </tbody>
       </table>
       <br /><br />
-      
+
       <table className="layout-table" style={{ pageBreakInside: 'avoid' }}>
         <tbody>
           <tr>
             <td style={{ width: '60%' }}></td>
             <td style={{ width: '40%', textAlign: 'center' }}>
               Redelong, {tglSuratIndo}<br />
-              <b>SEKRETARIS DAERAH<br />KABUPATEN BENER MERIAH,</b><br /><br /><br /><br /><br />
-              <b style={{ fontSize: '11pt', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</b><br />
-              <span>Pembina Utama Muda, IV/c</span><br />
-              <span>NIP. 197909251999121001</span>
+              {isBupati ? (
+                <>
+                  <b>BUPATI BENER MERIAH,</b><br /><br /><br /><br /><br />
+                  <b style={{ fontSize: '9pt' }}>Ir. TAGORE ABUBAKAR</b><br />
+                </>
+              ) : (
+                <>
+                  <b>SEKRETARIS DAERAH<br />KABUPATEN BENER MERIAH,</b><br /><br /><br /><br /><br />
+                  <b style={{ fontSize: '9pt', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</b><br />
+                  <span>Pembina Utama Muda, IV/c</span><br />
+                  <span>NIP. 197909251999121001</span>
+                </>
+              )}
             </td>
           </tr>
         </tbody>

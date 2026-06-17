@@ -7,9 +7,9 @@ const SptTemplate = forwardRef(function SptTemplate({ formData, pegawaiList, tgl
     <div ref={ref} className="pdf-page">
       {/* KOP SURAT PERMANEN (SELALU GARUDA & BUPATI) */}
       <div className="pdf-text-center" style={{ marginBottom: '10px' }}>
-        <img src="/garuda.jpg" alt="Garuda" style={{ display: 'block', margin: '0 auto 8px auto', width: '70px', height: 'auto' }} />
-        <span style={{ fontSize: '16pt', fontWeight: 'bold', fontFamily: 'Arial, Helvetica, sans-serif' }}>BUPATI BENER MERIAH</span><br />
-        <img src="/huruf-arab.jpeg" alt="Huruf Arab" style={{ display: 'block', margin: '2px auto 0 auto', height: '24px', width: 'auto' }} />
+        <img src="/garuda.jpg" alt="Garuda" style={{ display: 'block', margin: '0 auto 8px auto', width: '200px', height: 'auto' }} />
+        <span style={{ fontSize: '12pt', fontWeight: 'bold', fontFamily: "Arial, sans-serif" }}>BUPATI BENER MERIAH</span>
+        <img src="/arab.jpg" alt="Huruf Arab" style={{ display: 'block', margin: '2px auto 0 auto', height: '24px', width: 'auto' }} />
       </div>
 
       <h3 className="judul-surat" style={{ marginBottom: 0 }}><u>SURAT PERINTAH TUGAS</u></h3>
@@ -108,12 +108,12 @@ const SptTemplate = forwardRef(function SptTemplate({ formData, pegawaiList, tgl
               {isBupati ? (
                 <>
                   <b>BUPATI BENER MERIAH,</b><br /><br /><br /><br /><br />
-                  <b style={{ fontSize: '11pt' }}>Ir. TAGORE ABUBAKAR</b><br />
+                  <b style={{ fontSize: '9pt' }}>Ir. TAGORE ABUBAKAR</b><br />
                 </>
               ) : (
                 <>
                   <b>SEKRETARIS DAERAH<br />KABUPATEN BENER MERIAH,</b><br /><br /><br /><br /><br />
-                  <b style={{ fontSize: '11pt', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</b><br />
+                  <b style={{ fontSize: '9pt', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</b><br />
                   <span>Pembina Utama Muda, IV/c</span><br />
                   <span>NIP. 197909251999121001</span>
                 </>

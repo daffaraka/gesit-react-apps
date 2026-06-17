@@ -2,6 +2,7 @@ import { forwardRef, useImperativeHandle, useRef } from 'react';
 import SptTemplate from './SptTemplate';
 import SppdTemplate from './SppdTemplate';
 import SuratTugasSetdaTemplate from './SuratTugasSetdaTemplate';
+import SppdBelakangTemplate from './SppdBelakangTemplate';
 
 const PdfContainer = forwardRef(function PdfContainer({ data }, ref) {
   const sptRef = useRef(null);
@@ -46,22 +47,21 @@ const PdfContainer = forwardRef(function PdfContainer({ data }, ref) {
         />
       </div>
 
-      {/* 2. SPPD Saja (2 Halaman: Surat Tugas Setda + SPPD Setda) */}
+      {/* 2. SPPD Saja (2 Halaman: SPPD Depan + SPPD Belakang) */}
       <div ref={sppdRef}>
-        <SuratTugasSetdaTemplate
-          formData={formData}
-          pegawaiList={pegawaiList}
-          tglBerangkatIndo={tglBerangkatIndo}
-          tglKembaliIndo={tglKembaliIndo}
-          tglSuratIndo={tglSuratIndo}
-        />
-        <div className="html2pdf__page-break" style={{ height: 0, margin: 0, border: 0 }}></div>
         <SppdTemplate
           formData={formData}
           pegawaiList={pegawaiList}
           lama={lama}
           tglBerangkatIndo={tglBerangkatIndo}
           tglKembaliIndo={tglKembaliIndo}
+          tglSuratIndo={tglSuratIndo}
+        />
+        <div className="html2pdf__page-break" style={{ height: 0, margin: 0, border: 0 }}></div>
+        <SppdBelakangTemplate
+          formData={formData}
+          pegawaiList={pegawaiList}
+          tglBerangkatIndo={tglBerangkatIndo}
           tglSuratIndo={tglSuratIndo}
         />
       </div>

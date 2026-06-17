@@ -20,14 +20,14 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   background-color: white;
-  font-size: 11pt;
+  font-size: 9pt;
   line-height: 1.5;
 }
 
 .pdf-text-center { text-align: center; }
 
 .judul-surat {
-  font-size: 14pt;
+  font-size: 12pt;
   font-weight: bold;
   text-align: center;
   margin-top: 15px;
