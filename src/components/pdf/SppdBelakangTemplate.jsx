@@ -97,19 +97,20 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
       </table>
 
       {/* Signature */}
-      <div style={{ marginTop: '20px', width: '60%', float: 'right', textAlign: 'center' }}>
+      <div style={{ marginTop: '0px', width: '35%', float: 'right', textAlign: 'center' }}>
+        <br />
         <p style={{ margin: 0 }}>Redelong, {tglSuratIndo}</p>
         {isBupati ? (
           <>
             <p style={{ margin: 0, fontWeight: 'bold' }}>BUPATI BENER MERIAH,</p>
-            <br /><br /><br /><br />
+            <br /><br /><br />
             <p style={{ margin: 0, fontWeight: 'bold' }}>Ir. TAGORE ABUBAKAR</p>
           </>
         ) : (
           <>
             <p style={{ margin: 0, fontWeight: 'bold' }}>SEKRETARIS DAERAH</p>
             <p style={{ margin: 0, fontWeight: 'bold' }}>KABUPATEN BENER MERIAH,</p>
-            <br /><br /><br /><br />
+            <br /><br /><br />
             <p style={{ margin: 0, fontWeight: 'bold', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</p>
             <p style={{ margin: 0 }}>Pembina Utama Madya, IV/d</p>
             <p style={{ margin: 0 }}>NIP. 19790925 199912 1 001</p>

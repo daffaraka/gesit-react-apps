@@ -7,10 +7,10 @@ const SptTemplate = forwardRef(function SptTemplate({ formData, pegawaiList, tgl
     <div ref={ref} className="pdf-page">
       {/* KOP SURAT */}
       {isBupati ? (
-        <div className="pdf-text-center" style={{ marginBottom: '10px' }}>
+        <div className="pdf-text-center" style={{ marginBottom: '0px' }}>
           <img src="/garuda.jpg" alt="Garuda" style={{ display: 'block', margin: '0 auto 8px auto', width: '100px', height: 'auto' }} />
-          <span style={{ fontSize: '20pt', fontWeight: 'bold', fontFamily: "Arial, sans-serif", letterSpacing: '8px', display: 'block', width: '100%', marginTop: '5px' }}>BUPATI BENER MERIAH</span>
-          <img src="/arab.jpg" alt="Huruf Arab" style={{ display: 'block', margin: '2px auto 0 auto', height: '24px', width: 'auto' }} />
+          <span style={{ fontSize: '15pt', fontWeight: 'bold', fontFamily: "Arial, sans-serif", letterSpacing: '3px', display: 'block', width: '100%', marginTop: '5px' }}>BUPATI BENER MERIAH</span>
+          <img src="/arab.jpg" alt="Huruf Arab" style={{ display: 'block', margin: '10px auto 0 auto', height: '35px', width: 'auto' }} />
         </div>
       ) : (
         <table style={{ width: '100%', borderBottom: '3px double black', marginBottom: '10px' }}>
@@ -23,7 +23,7 @@ const SptTemplate = forwardRef(function SptTemplate({ formData, pegawaiList, tgl
                 <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
                 <span style={{ fontSize: '15pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
                 <img src="/arab-panjang.jpeg" alt="Huruf Arab"
-                  style={{ width: '210px', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+                  style={{ width: '420px', height: 'auto', marginTop: '10px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
                 <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
                 <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
               </td>
@@ -118,12 +118,13 @@ const SptTemplate = forwardRef(function SptTemplate({ formData, pegawaiList, tgl
       </table>
       <br /><br />
       <p>Demikianlah untuk dilaksanakan sebagaimana mestinya</p>
-
+      <br />
       <table className="layout-table" style={{ pageBreakInside: 'avoid' }}>
         <tbody>
           <tr>
-            <td style={{ width: '60%' }}></td>
-            <td style={{ width: '40%', textAlign: 'center' }}>
+            <td style={{ width: '65%' }}></td>
+            <td style={{ width: '35%', textAlign: 'center' }}>
+              <br />
               Redelong, {tglSuratIndo}<br />
               {isBupati ? (
                 <>
