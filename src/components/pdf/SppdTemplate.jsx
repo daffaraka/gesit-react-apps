@@ -14,12 +14,12 @@ const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, l
               <img src="/logo-bener-meriah.jpg" alt="Logo" style={{ width: '120px', maxWidth: 'none', height: 'auto', display: 'inline-block' }} />
             </td>
             <td style={{ width: '85%', textAlign: 'center', lineHeight: '1.1', paddingBottom: '10px' }}>
-              <span style={{ fontSize: '11pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
-              <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
-              <img src="/arab.jpg" alt="Huruf Arab"
-                style={{ width: '210', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
-              <span style={{ fontSize: '7pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
-              <span style={{ fontSize: '7pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
+              <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
+              <span style={{ fontSize: '15pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
+              <img src="/arab-panjang.jpeg" alt="Huruf Arab"
+                style={{ width: '210px', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+              <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
+              <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
             </td>
           </tr>
         </tbody>

@@ -59,13 +59,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
               </td>
             </tr>
           ))}
-        </tbody>
-      </table>
 
-      <div className="html2pdf__page-break" style={{ height: 0, margin: 0, border: 0 }}></div>
-
-      <table className="bordered-table" style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
-        <tbody>
           {/* Row VI */}
           <tr>
             <td style={{ padding: '4px 6px', verticalAlign: 'top' }}>

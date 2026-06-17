@@ -5,12 +5,32 @@ const SptTemplate = forwardRef(function SptTemplate({ formData, pegawaiList, tgl
 
   return (
     <div ref={ref} className="pdf-page">
-      {/* KOP SURAT PERMANEN (SELALU GARUDA & BUPATI) */}
-      <div className="pdf-text-center" style={{ marginBottom: '10px' }}>
-        <img src="/garuda.jpg" alt="Garuda" style={{ display: 'block', margin: '0 auto 8px auto', width: '200px', height: 'auto' }} />
-        <span style={{ fontSize: '12pt', fontWeight: 'bold', fontFamily: "Arial, sans-serif" }}>BUPATI BENER MERIAH</span>
-        <img src="/arab.jpg" alt="Huruf Arab" style={{ display: 'block', margin: '2px auto 0 auto', height: '24px', width: 'auto' }} />
-      </div>
+      {/* KOP SURAT */}
+      {isBupati ? (
+        <div className="pdf-text-center" style={{ marginBottom: '10px' }}>
+          <img src="/garuda.jpg" alt="Garuda" style={{ display: 'block', margin: '0 auto 8px auto', width: '100px', height: 'auto' }} />
+          <span style={{ fontSize: '20pt', fontWeight: 'bold', fontFamily: "Arial, sans-serif", letterSpacing: '8px', display: 'block', width: '100%', marginTop: '5px' }}>BUPATI BENER MERIAH</span>
+          <img src="/arab.jpg" alt="Huruf Arab" style={{ display: 'block', margin: '2px auto 0 auto', height: '24px', width: 'auto' }} />
+        </div>
+      ) : (
+        <table style={{ width: '100%', borderBottom: '3px double black', marginBottom: '10px' }}>
+          <tbody>
+            <tr>
+              <td style={{ width: '15%', textAlign: 'center', verticalAlign: 'middle', paddingBottom: '10px' }}>
+                <img src="/logo-bener-meriah.jpg" alt="Logo" style={{ width: '120px', maxWidth: 'none', height: 'auto', display: 'inline-block' }} />
+              </td>
+              <td style={{ width: '85%', textAlign: 'center', lineHeight: '1.1', paddingBottom: '10px' }}>
+                <span style={{ fontSize: '13pt', fontWeight: 'bold' }}>PEMERINTAH KABUPATEN BENER MERIAH</span><br />
+                <span style={{ fontSize: '15pt', fontWeight: 'bold' }}>SEKRETARIAT DAERAH</span><br />
+                <img src="/arab-panjang.jpeg" alt="Huruf Arab"
+                  style={{ width: '210px', height: 'auto', marginTop: '5px', marginBottom: '0px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+                <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block', marginTop: '2px' }}>Komplek Perkantoran Pemda, Serule Kayu - Kab. Bener Meriah, Pos. 24581</span>
+                <span style={{ fontSize: '9pt', fontStyle: 'italic', display: 'block' }}>E-Mail: bagianumumsetdakab@gmail.com</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      )}
 
       <h3 className="judul-surat" style={{ marginBottom: 0 }}><u>SURAT PERINTAH TUGAS</u></h3>
       <p className="pdf-text-center" style={{ marginTop: '5px' }}>Nomor: 000.1.2.1/{formData.nomor_spt} /ST/2026</p>
