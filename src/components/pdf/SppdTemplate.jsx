@@ -63,7 +63,7 @@ const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, l
           <tr>
             <td className="pdf-text-center">1.</td>
             <td style={{ width: '46%' }}>Pejabat yang memberi perintah</td>
-            <td colSpan="2">{isBupati ? 'Bupati Bener Meriah' : 'Sekretaris Daerah Kabupaten Bener Meriah'}</td>
+            <td colSpan="2"><b>{isBupati ? 'Bupati Bener Meriah' : 'Sekretaris Daerah Kabupaten Bener Meriah'}</b></td>
           </tr>
           <tr>
             <td className="pdf-text-center">2.</td>
