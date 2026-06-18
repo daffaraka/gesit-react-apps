@@ -105,7 +105,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
         <br /><br /><br />
         <p style={{ margin: 0, fontWeight: 'bold', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</p>
         <p style={{ margin: 0 }}>Pembina Utama Madya, IV/d</p>
-        <p style={{ margin: 0 }}>NIP. 19790925 199912 1 001</p>
+        <p style={{ marginBottom: '20px' }}>NIP. 19790925 199912 1 001</p>
       </div>
       <div style={{ clear: 'both' }}></div>
     </div>
