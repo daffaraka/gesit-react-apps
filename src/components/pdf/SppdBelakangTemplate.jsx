@@ -100,22 +100,12 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
       <div style={{ marginTop: '0px', width: '35%', float: 'right', textAlign: 'center' }}>
         <br />
         <p style={{ margin: 0 }}>Redelong, {tglSuratIndo}</p>
-        {isBupati ? (
-          <>
-            <p style={{ margin: 0, fontWeight: 'bold' }}>BUPATI BENER MERIAH,</p>
-            <br /><br /><br />
-            <p style={{ margin: 0, fontWeight: 'bold' }}>Ir. TAGORE ABUBAKAR</p>
-          </>
-        ) : (
-          <>
-            <p style={{ margin: 0, fontWeight: 'bold' }}>SEKRETARIS DAERAH</p>
-            <p style={{ margin: 0, fontWeight: 'bold' }}>KABUPATEN BENER MERIAH,</p>
-            <br /><br /><br />
-            <p style={{ margin: 0, fontWeight: 'bold', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</p>
-            <p style={{ margin: 0 }}>Pembina Utama Madya, IV/d</p>
-            <p style={{ marginBottom: '30px' }}>NIP. 197909251999121001</p>
-          </>
-        )}
+        <p style={{ margin: 0, fontWeight: 'bold' }}>SEKRETARIS DAERAH</p>
+        <p style={{ margin: 0, fontWeight: 'bold' }}>KABUPATEN BENER MERIAH,</p>
+        <br /><br /><br />
+        <p style={{ margin: 0, fontWeight: 'bold', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</p>
+        <p style={{ margin: 0 }}>Pembina Utama Madya, IV/d</p>
+        <p style={{ margin: 0 }}>NIP. 19790925 199912 1 001</p>
       </div>
       <div style={{ clear: 'both' }}></div>
     </div>

@@ -141,19 +141,10 @@ const SppdTemplate = forwardRef(function SppdTemplate({ formData, pegawaiList, l
             <td style={{ width: '35%', textAlign: 'center' }}>
               <br />
               Redelong, {tglSuratIndo}<br />
-              {isBupati ? (
-                <>
-                  <b>BUPATI BENER MERIAH,</b><br /><br /><br /><br /><br />
-                  <b style={{ fontSize: '9pt' }}>Ir. TAGORE ABUBAKAR</b><br />
-                </>
-              ) : (
-                <>
-                  <b>SEKRETARIS DAERAH<br />KABUPATEN BENER MERIAH,</b><br /><br /><br /><br /><br />
-                  <b style={{ fontSize: '9pt', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</b><br />
-                  <span>Pembina Utama Muda, IV/c</span><br />
-                  <span>NIP. 197909251999121001</span>
-                </>
-              )}
+              <b>SEKRETARIS DAERAH<br />KABUPATEN BENER MERIAH,</b><br /><br /><br /><br /><br />
+              <b style={{ fontSize: '9pt', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</b><br />
+              <span>Pembina Utama Madya, IV/d</span><br />
+              <span>NIP. 19790925 199912 1 001</span>
             </td>
           </tr>
         </tbody>
