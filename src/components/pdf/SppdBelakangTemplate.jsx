@@ -4,7 +4,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
   const isBupati = formData.jenis_spt === 'BUPATI';
   return (
     <div ref={ref} className="pdf-page" style={{ fontSize: '8pt', fontFamily: 'Arial, sans-serif' }}>
-      <table className="bordered-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <table className="bordered-table" style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
         <tbody>
           {/* Row 1 */}
           <tr>
@@ -36,7 +36,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
             { num: 'V.' }
           ].map((row, idx) => (
             <tr key={idx}>
-              <td style={{ padding: '10px 10px', verticalAlign: 'top' }}>
+              <td style={{ padding: '4px 12px', verticalAlign: 'top' }}>
                 <table style={{ width: '100%' }}>
                   <tbody>
                     <tr><td style={{ width: '30px' }}>{row.num}</td><td style={{ width: '80px' }}>Tiba di</td><td>:</td></tr>
@@ -46,7 +46,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
                   </tbody>
                 </table>
               </td>
-              <td style={{ padding: '10px 10px', verticalAlign: 'top' }}>
+              <td style={{ padding: '4px 12px', verticalAlign: 'top' }}>
                 <table style={{ width: '100%' }}>
                   <tbody>
                     <tr><td style={{ width: '100px' }}>Berangkat</td><td>:</td></tr>
@@ -62,7 +62,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
 
           {/* Row VI */}
           <tr>
-            <td style={{ padding: '10px 10px', verticalAlign: 'top' }}>
+            <td style={{ padding: '4px 12px', verticalAlign: 'top' }}>
               <table style={{ width: '100%' }}>
                 <tbody>
                   <tr><td style={{ width: '30px' }}>VI.</td><td style={{ width: '120px' }}>Tiba di</td><td>:</td></tr>
@@ -72,21 +72,21 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
                 </tbody>
               </table>
             </td>
-            <td style={{ padding: '10px 10px', verticalAlign: 'top', textAlign: 'justify' }}>
+            <td style={{ padding: '4px 12px', verticalAlign: 'top', textAlign: 'justify' }}>
               Telah diperiksa, dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya
             </td>
           </tr>
 
           {/* Row VII */}
           <tr>
-            <td colSpan="2" style={{ padding: '10px 10px', fontWeight: 'bold' }}>
+            <td colSpan="2" style={{ padding: '4px 12px', fontWeight: 'bold' }}>
               VII. CATATAN LAIN-LAIN
             </td>
           </tr>
 
           {/* Row VIII */}
           <tr>
-            <td colSpan="2" style={{ padding: '10px 10px' }}>
+            <td colSpan="2" style={{ padding: '4px 12px' }}>
               <span style={{ fontWeight: 'bold' }}>VIII. PERHATIAN</span><br />
               <div style={{ textAlign: 'justify', marginTop: '4px' }}>
                 Pejabat yang berwenang menerbitkan SPD, pegawai yang melakukan perjalanan dinas, para pejabat yang mengesahkan tanggal berangkat / tiba serta bendaharawan bertanggung jawab berdasarkan peraturan-peraturan Keuangan Negara, apabila Negara mendapat rugi akibat kesalahan, kealpaannya.
@@ -113,7 +113,7 @@ const SppdBelakangTemplate = forwardRef(function SppdBelakangTemplate({ formData
             <br /><br /><br />
             <p style={{ margin: 0, fontWeight: 'bold', textDecoration: 'underline' }}>RISWANDIKA PUTRA, S.STP, M.A.P</p>
             <p style={{ margin: 0 }}>Pembina Utama Madya, IV/d</p>
-            <p style={{ margin: 0 }}>NIP. 19790925 199912 1 001</p>
+            <p style={{ marginBottom: '30px' }}>NIP. 197909251999121001</p>
           </>
         )}
       </div>
