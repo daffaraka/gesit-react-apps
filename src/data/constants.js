@@ -1,9 +1,9 @@
 // CSV Database URLs
 export const CSV_URL_LOGIN = '';
 export const CSV_URL_PEGAWAI = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2qrZYdgV-h8vx7pppz-oY1s0GHWrMYi2QwI4KhXhCkh2LzzpQOyd4nPGdHGZqF7izvapyR-vvw87_/pub?gid=39804184&single=true&output=csv';
-export const CSV_URL_SPPD = '';
+export const CSV_URL_SPPD = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2qrZYdgV-h8vx7pppz-oY1s0GHWrMYi2QwI4KhXhCkh2LzzpQOyd4nPGdHGZqF7izvapyR-vvw87_/pub?gid=0&single=true&output=csv';
 
-export const IS_DEVELOPMENT = true;
+export const IS_DEVELOPMENT = false;
 
 export const DUMMY_USERS = [
   { user: 'admin', pass: '123', nama: 'Admin Setda', role: 'SuperAdmin' }

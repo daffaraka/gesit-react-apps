@@ -10,12 +10,24 @@ export default function RiwayatPage() {
       if (CSV_URL_SPPD) {
         try {
           const data = await loadCsv(CSV_URL_SPPD);
-          setRows(data.map(row => ({
-            nomorSpt: row['NOMOR_SPT'] || '-', jenisSpt: row['JENIS_SPT'] || '-',
-            tujuan: row['TUJUAN'] || '-', pegawaiUtama: row['PEGAWAI_UTAMA'] || '-',
-            tglBerangkat: row['TANGGAL_BERANGKAT'] || '-'
-          })).filter(r => r.nomorSpt !== '-'));
-        } catch { setRows(DUMMY_RIWAYAT); }
+          const mapped = data.map(row => {
+            const keys = Object.keys(row);
+            const nomorKey = keys.find(k => k.includes('NOMOR_SPT') || k.includes('Nomor SPT') || k.includes('NOMOR'));
+            const jenisKey = keys.find(k => k.includes('JENIS_SPT') || k.includes('Jenis SPT') || k.includes('JENIS'));
+            const tujuanKey = keys.find(k => k.includes('TUJUAN'));
+            const pegawaiKey = keys.find(k => k.includes('PEGAWAI_1') || k.includes('PEGAWAI'));
+            const tglKey = keys.find(k => k.includes('TGL_BERANGKAT') || k.includes('TANGGAL'));
+            
+            return {
+              nomorSpt: nomorKey ? row[nomorKey] : '-',
+              jenisSpt: (jenisKey ? row[jenisKey] : '-').toString().trim().toUpperCase(),
+              tujuan: tujuanKey ? row[tujuanKey] : '-',
+              pegawaiUtama: pegawaiKey ? row[pegawaiKey] : '-',
+              tglBerangkat: tglKey ? row[tglKey] : '-'
+            };
+          }).filter(r => r.nomorSpt && r.nomorSpt !== '-');
+          setRows(mapped.length > 0 ? mapped : []);
+        } catch { setRows([]); }
       } else { setRows(DUMMY_RIWAYAT); }
     }
     load();

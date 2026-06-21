@@ -6,6 +6,7 @@ import { loadCsv } from '../../utils/csvLoader';
 
 export default function DashboardPage() {
   const [stats, setStats] = useState({ total: 0, pegawai: 0, setda: 0, bupati: 0 });
+  const [debugMsg, setDebugMsg] = useState('');
 
   useEffect(() => {
     async function load() {
@@ -13,19 +14,28 @@ export default function DashboardPage() {
       if (CSV_URL_PEGAWAI) {
         try {
           const data = await loadCsv(CSV_URL_PEGAWAI);
-          pegawaiCount = data.filter(r => (r['NAMA'] || r['Nama'] || '').trim()).length;
-        } catch { /* fallback */ }
+          pegawaiCount = data.filter(r => Object.values(r).some(v => v)).length;
+        } catch (e) { setDebugMsg(prev => prev + ' | Err Pegawai: ' + e.message); }
       }
 
-      let riwayat = DUMMY_RIWAYAT;
+      let riwayat = [];
       if (CSV_URL_SPPD) {
         try {
           const data = await loadCsv(CSV_URL_SPPD);
-          riwayat = data.map(row => ({
-            nomorSpt: row['NOMOR_SPT'] || row['Nomor SPT'] || '-',
-            jenisSpt: row['JENIS_SPT'] || row['Jenis SPT'] || '-',
-          })).filter(r => r.nomorSpt !== '-');
-        } catch { /* fallback */ }
+          setDebugMsg(prev => prev + ` | SPPD Loaded: ${data.length} rows`);
+          riwayat = data.map(row => {
+            const keys = Object.keys(row);
+            const nomorKey = keys.find(k => k.includes('NOMOR_SPT') || k.includes('Nomor SPT') || k.includes('NOMOR'));
+            const jenisKey = keys.find(k => k.includes('JENIS_SPT') || k.includes('Jenis SPT') || k.includes('JENIS'));
+            return {
+              nomorSpt: nomorKey ? row[nomorKey] : '-',
+              jenisSpt: (jenisKey ? row[jenisKey] : '-').toString().trim().toUpperCase(),
+            };
+          }).filter(r => r.nomorSpt && r.nomorSpt !== '-');
+        } catch (err) {
+          setDebugMsg(prev => prev + ' | Err SPPD: ' + err.toString());
+          console.error('Error loading SPPD:', err);
+        }
       }
 
       const cSetda = riwayat.filter(x => x.jenisSpt === 'SETDA').length;
