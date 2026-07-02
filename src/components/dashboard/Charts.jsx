@@ -3,12 +3,12 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Tooltip, Legend);
 
-export function LineChart({ setdaCount, bupatiCount }) {
+export function LineChart({ monthlyData }) {
   const data = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
     datasets: [{
-      label: 'Aktivitas Cetak (Simulasi)',
-      data: [4, 9, 7, 11, 16, setdaCount + bupatiCount, 0, 0, 0, 0, 0, 0],
+      label: 'Total Dokumen SPPD',
+      data: monthlyData,
       borderColor: '#3b82f6',
       tension: 0.3,
       fill: false
