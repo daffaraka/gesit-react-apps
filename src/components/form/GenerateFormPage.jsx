@@ -83,7 +83,46 @@ export default function GenerateFormPage({ onNotify }) {
         
         if (sptUrl && sppdUrl) {
           setGeneratedUrls({ spt: sptUrl, sppd: sppdUrl });
-          onNotify(`Dokumen berhasil dibuat menggunakan HTML-to-PDF lokal.`, 'success');
+          
+          // Kirim ke Google Sheets via Webhook
+          const webhookUrl = localStorage.getItem('GESIT_WEBHOOK_SPPD');
+          if (webhookUrl) {
+            onNotify(`Memproses penyimpanan ke Google Sheets...`, 'info');
+            try {
+              const payload = {
+                nomor_spt: formData.nomor_spt,
+                jenis_spt: formData.jenis_spt,
+                gelarPenandatangan: formData.jenis_spt === 'BUPATI' ? "Bupati Bener Meriah" : "Sekretaris Daerah",
+                tujuan: formData.tujuan,
+                dasar: formData.dasar,
+                maksud: formData.maksud,
+                alat_angkut: formData.alat_angkut,
+                tgl_berangkat: formData.tgl_berangkat,
+                tgl_kembali: formData.tgl_kembali,
+                tempat_berangkat: formData.tempat_berangkat,
+                pegawaiUtama: pegawaiList[0]?.nama || '',
+                pengikut1: pegawaiList[1]?.nama || '',
+                pengikut2: pegawaiList[2]?.nama || '',
+                pengikut3: pegawaiList[3]?.nama || '',
+                pengikut4: pegawaiList[4]?.nama || '',
+                pengikut5: pegawaiList[5]?.nama || '',
+                pengikut6: pegawaiList[6]?.nama || '',
+                status: "SUCCESS (LOCAL)",
+                linkSpt: "LOCAL_PDF",
+                tgl_surat: formData.tgl_surat
+              };
+              
+              const { saveSppdToSpreadsheet } = await import('../../utils/googleSheetsAPI');
+              await saveSppdToSpreadsheet(webhookUrl, payload);
+              onNotify(`Dokumen berhasil dibuat dan tersimpan di Google Sheets!`, 'success');
+            } catch (err) {
+              console.error("Gagal simpan ke sheets:", err);
+              onNotify(`Dokumen berhasil dibuat, tapi GAGAL menyimpan ke Google Sheets.`, 'error');
+            }
+          } else {
+             onNotify(`Dokumen berhasil dibuat menggunakan HTML-to-PDF lokal.`, 'success');
+          }
+
         } else {
           onNotify('Gagal generate PDF!', 'error');
         }
